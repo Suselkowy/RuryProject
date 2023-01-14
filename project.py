@@ -51,16 +51,16 @@ def integral(function, start_x, end_x):
     return (end_x-start_x)/2 * (w1 * function(x1) + w1 * function(x2))
 
 def p(x):
-    return 1 if 1 < x <= 2 else 0
+    return 10**11 if 1 < x <= 2 else 0
 
 def L_p1(i, h):
     def inside(x):
-        return p(x) * base_function(i, h)(x)
+        return base_function(i, h)(x)
     return inside
 
 def make_function(X, n, h):
     def inside(x):
-        res = 5 - (x/3)
+        res = -5 * base_function(0, h)(x) - 4 * base_function(n, h)(x)
         for i in range(1, n):
             res += X[i-1] * base_function(i , h)(x)
         return res
@@ -87,10 +87,10 @@ def start(n):
             matrix_A[i][i-1] = matrix_A[i-1][i]
 
         matrix_B[i-1][0] = 4 * math.pi * scipy.constants.G * (integral(L_p1(i ,h), (i-1) * h, i * h) + integral(L_p1(i ,h), i * h, (i+1) * h))
-        #l1 = combine_functions(base_function_derivative(0,h), base_function_derivative(i,h))
-        #l2 = combine_functions(base_function_derivative(i,h), base_function_derivative(n,h))
-        #matrix_B[i-1][0] += - 5*integral(l1, (i-1) * h, i * h) - 5*integral(l1, i * h, (i+1) * h) - 4*integral(l2, (i-1) * h, i * h) - 4*integral(l2, i * h, (i+1) * h)
-        matrix_B[i - 1][0] += -1/3 * (integral(base_function_derivative(i,h), (i-1) * h, i * h) + integral(base_function_derivative(i,h), i * h, (i+1) * h))
+        l1 = combine_functions(base_function_derivative(0,h), base_function_derivative(i,h))
+        l2 = combine_functions(base_function_derivative(i,h), base_function_derivative(n,h))
+        matrix_B[i-1][0] += -5*integral(l1, (i-1) * h, i * h) + -4*integral(l2, i * h, (i+1) * h)
+        #matrix_B[i - 1][0] += -1/3 * (integral(base_function_derivative(i,h), (i-1) * h, i * h) + integral(base_function_derivative(i,h), i * h, (i+1) * h))
         #print(-1/3 * (integral(base_function_derivative(i,h), (i-1) * h, i * h) + integral(base_function_derivative(i,h), i * h, (i+1) * h)))
 
     x = np.linalg.solve(matrix_A, matrix_B)
@@ -98,8 +98,7 @@ def start(n):
     func = make_function(x, n, h)
     a = [h * i for i in range(n+ 1)]
     b = [func(x) for x in a]
-    print(matrix_B)
-    print(x)
+    print(b)
     plot(a,b)
 
 start(5)
