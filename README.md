@@ -1,6 +1,6 @@
 
 # Gravitational potential FEM solution
-This repository contains problem description (in Polish) and program written in Python 3.8 that preproceses the equation matrix (mainly by solving some integrals by Gauss–Legendre quadrature) and solves the system of equations.This project was done on Differential and difference equations (Równania różniczkowe i różnicowe) course at AGH.
+This repository contains problem description (in Polish) and program written in Python 3.8 that preproceses the equation matrix (mainly by solving some integrals by Gauss–Legendre quadrature) and solves the system of equations. This project was made for Differential and difference equations (Równania różniczkowe i różnicowe) course at AGH.
 
 # Requirements
 Project to work needs 3 aditional python libraries:
