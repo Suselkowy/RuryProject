@@ -1,5 +1,6 @@
 import math
 import matplotlib.pyplot as plt
+import time
 
 import scipy.constants
 import numpy as np
@@ -100,7 +101,9 @@ def start(n):
 def interface():
     try:
         n = int(input("Insert N: "))
+        s_t = time.time()
         start(n)
+        print(time.time()-s_t)
     except ValueError:
         print("Provided value should be integer")
     except:
