@@ -12,7 +12,7 @@ Project to work needs 3 aditional python libraries:
 ```python
 pip install scipy numpy matplotlib
 ```
-# Problem (in Polish)
+# Problem
 ![Problem](https://user-images.githubusercontent.com/114989568/216762013-1c8e88d3-1a54-454c-b9de-53e1f739a89e.png)
 
 # Example solution (n=100)
