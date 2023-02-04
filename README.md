@@ -1,5 +1,5 @@
 
-# MES gravitational potential Solver
+#gravitational potential FEM solution
 
 Project to work needs 3 aditional libraries:
 - scipy
