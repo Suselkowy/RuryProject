@@ -16,6 +16,6 @@ pip install scipy numpy matplotlib
 ![Problem](https://user-images.githubusercontent.com/114989568/216762013-1c8e88d3-1a54-454c-b9de-53e1f739a89e.png)
 
 # Example solution (n=100)
-![Figure]([https://user-images.githubusercontent.com/114989568/216762013-1c8e88d3-1a54-454c-b9de-53e1f739a89e.png](https://user-images.githubusercontent.com/114989568/216762218-5f47f833-8c99-4931-b124-0bb4331eb3e0.png))
+![Figure](https://user-images.githubusercontent.com/114989568/216762218-5f47f833-8c99-4931-b124-0bb4331eb3e0.png)
 
 
