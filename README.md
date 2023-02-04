@@ -13,7 +13,6 @@ Project to work needs 3 aditional python libraries:
 pip install scipy numpy matplotlib
 ```
 # The content of the task (in Polish)
-![alt text](https://github.com/Suselkowy/images-to-readme/tree/main/gravitational-potential-FEM/Problem.png?raw=true)
 
 
 
